@@ -36,8 +36,16 @@ public class LeadsFragment extends Fragment {
         LeadItem leadItem=new LeadItem("My Name is Khan","piyush6348@gmail.com",
                 "8587072927","27/07/2017","27/08/2017");
 
-        listOfLeads=new LeadItem[1];
+        // HARD CODED DATA
+        listOfLeads=new LeadItem[8];
         listOfLeads[0]=leadItem;
+        listOfLeads[1]=leadItem;
+        listOfLeads[2]=leadItem;
+        listOfLeads[3]=leadItem;
+        listOfLeads[4]=leadItem;
+        listOfLeads[5]=leadItem;
+        listOfLeads[6]=leadItem;
+        listOfLeads[7]=leadItem;
 
         leadsRecyclerView=(RecyclerView) row.findViewById(R.id.leads_recycler_view);
         leadsRecyclerView.setHasFixedSize(true);

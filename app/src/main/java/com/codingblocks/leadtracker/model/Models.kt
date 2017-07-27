@@ -10,3 +10,6 @@ data class LeadItem(val name: String,
                 val createdAt: String,
                 val updatedAt: String)
 
+data class Center(val name: String,
+                   val address: String
+)

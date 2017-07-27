@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.codingblocks.leadtracker.R;
+import com.codingblocks.leadtracker.fragments.CentreListFragment;
 import com.codingblocks.leadtracker.fragments.LeadsFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,8 +35,12 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
+
         setUpDrawer(drawer);
 
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content, new LeadsFragment()).commit();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -76,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
 //            case R.id.dashboard_fragment:
 //                fragmentClass = SecondFragment.class;
 //                break;
-//            case R.id.centers_fragment:
-//                fragmentClass = ThirdFragment.class;
-//                break;
+            case R.id.centers_fragment:
+                fragmentClass = CentreListFragment.class;
+                break;
 //            case R.id.courses_fragment:
 //                fragmentClass = ThirdFragment.class;
 //                break;

@@ -2,6 +2,8 @@ package com.codingblocks.leadtracker.activities;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +38,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
     }
+    private void selectItem(MenuItem menuItem) {
+        Fragment fragment = null;
+        Class fragmentClass;
+        switch(menuItem.getItemId()) {
+            case R.id.leads_fragment:
+                fragmentClass = FirstFragment.class;
+                break;
+            case R.id.dashboard_fragment:
+                fragmentClass = SecondFragment.class;
+                break;
+            case R.id.centers_fragment:
+                fragmentClass = ThirdFragment.class;
+                break;
+            case R.id.courses_fragment:
+                fragmentClass = ThirdFragment.class;
+                break;
+            default:
+                fragmentClass = FirstFragment.class;
+        }
 
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content, fragment).commit();
+
+
+        menuItem.setChecked(true);
+
+        setTitle(menuItem.getTitle());
+
+        drawer.closeDrawers();
+    }
 
 }

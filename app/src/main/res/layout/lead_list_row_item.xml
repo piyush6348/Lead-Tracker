@@ -1,0 +1,12 @@
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+    android:padding="@dimen/dimen_5dp"
+    android:layout_height="100dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:hint="Piyush Gupta"
+            android:id="@+id/lead_name"
+            android:textSize="20dp"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>

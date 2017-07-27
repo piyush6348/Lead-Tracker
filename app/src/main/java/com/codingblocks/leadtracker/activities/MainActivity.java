@@ -27,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpDrawer(NavigationView navigationView) {
+        /*
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 selectItem(item);
                 return true;
             }
-        });
+        });*/
     }
 
 

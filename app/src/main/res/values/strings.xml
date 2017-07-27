@@ -10,4 +10,7 @@
     <string name="dashboard">Dashboard</string>
     <string name="centres">Centres</string>
     <string name="courses">Courses</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 </resources>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lead-Tracker.iml" filepath="$PROJECT_DIR$/Lead-Tracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/LeadTracker.iml" filepath="$PROJECT_DIR$/LeadTracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

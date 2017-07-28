@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.codingblocks.leadtracker.R;
 import com.codingblocks.leadtracker.fragments.CentreListFragment;
+import com.codingblocks.leadtracker.fragments.CourseListFragment;
 import com.codingblocks.leadtracker.fragments.LeadDetailsMain;
 import com.codingblocks.leadtracker.fragments.LeadsFragment;
 
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        //fragmentManager.beginTransaction().replace(R.id.content, new LeadsFragment()).commit();
-        fragmentManager.beginTransaction().replace(R.id.content, new LeadDetailsMain()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content, new LeadsFragment()).commit();
+        //fragmentManager.beginTransaction().replace(R.id.content, new LeadDetailsMain()).commit();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -86,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.centers_fragment:
                 fragmentClass = CentreListFragment.class;
                 break;
-//            case R.id.courses_fragment:
-//                fragmentClass = ThirdFragment.class;
-//                break;
+            case R.id.courses_fragment:
+                fragmentClass = CourseListFragment.class;
+                break;
             default:
                 fragmentClass = LeadsFragment.class;
         }

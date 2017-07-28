@@ -1,25 +1,21 @@
 package com.codingblocks.leadtracker.fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.codingblocks.leadtracker.R;
-import com.codingblocks.leadtracker.adapters.CentresAdapter;
-import com.codingblocks.leadtracker.model.Center;
+import com.codingblocks.leadtracker.adapters.CourseAdapter;
+import com.codingblocks.leadtracker.model.Course;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-/**
- * Created by Nimit on 27/7/17.
- */
-public class CentreListFragment extends Fragment {
+public class CourseListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,12 +26,12 @@ public class CentreListFragment extends Fragment {
     private String mParam2;
 
 
-    public CentreListFragment() {
+    public CourseListFragment() {
         // Required empty public constructor
     }
 
-    public static CentreListFragment newInstance(String param1, String param2) {
-        CentreListFragment fragment = new CentreListFragment();
+    public static CourseListFragment newInstance(String param1, String param2) {
+        CourseListFragment fragment = new CourseListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -51,33 +47,37 @@ public class CentreListFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
-    private ArrayList<Center> centerList = new ArrayList<>();
+    private ArrayList<Course> courseList = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_centre_list, container, false);
 
-        RecyclerView centerRecyclerView;
+        View rootView = inflater.inflate(R.layout.fragment_course_list, container, false);
 
-        centerRecyclerView = (RecyclerView) rootView.findViewById(R.id.center_recycler_view);
-        centerRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        centerRecyclerView.setHasFixedSize(true);
+        RecyclerView courseRecyclerView = (RecyclerView) rootView.findViewById(R.id.course_recycler_view);
+        courseRecyclerView.setHasFixedSize(true);
+        courseRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        addCenterData();
-        CentresAdapter centresAdapter = new CentresAdapter(centerList);
-        centerRecyclerView.setAdapter(centresAdapter);
+        addCourseData();
+        courseRecyclerView.setAdapter(new CourseAdapter(courseList));
 
         return rootView;
     }
-    void addCenterData(){
-        Center center = new Center("Pitampura", "47, Nishant Kunj, 1st Floor");
+
+    void addCourseData() {
+        HashMap<String, String> centerToInstructor = new HashMap<>();
+
+        // Dummy course available at centers with instructor info
+        centerToInstructor.put("Pitampura", "Arnav Bhaiya");
+        centerToInstructor.put("Dwarka", "Arnav Bhaiya");
+        centerToInstructor.put("Gurgaon", "Arnav Bhaiya");
 
 
-        for(int i=0;i<5;i++){
-            centerList.add(center);
+        for (int i = 0; i < 5; i++) {
+            Course course = new Course("Course " + i,
+                    "Android Course", centerToInstructor, "15-08-2017", "20-10-2017");
+            courseList.add(course);
         }
-        Log.e("Sd", centerList.toString());
     }
 
 }

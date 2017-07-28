@@ -58,8 +58,9 @@ public class CourseListFragment extends Fragment {
         courseRecyclerView.setHasFixedSize(true);
         courseRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        courseList = new ArrayList<>();
         addCourseData();
-        courseRecyclerView.setAdapter(new CourseAdapter(courseList));
+        courseRecyclerView.setAdapter(new CourseAdapter(courseList,getActivity()));
 
         return rootView;
     }

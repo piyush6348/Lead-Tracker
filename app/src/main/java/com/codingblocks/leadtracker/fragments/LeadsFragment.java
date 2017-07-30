@@ -52,6 +52,7 @@ public class LeadsFragment extends Fragment {
         leadsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         leadsAdapter=new LeadsAdapter(listOfLeads);
         leadsRecyclerView.setAdapter(leadsAdapter);
+
         return row;
     }
 

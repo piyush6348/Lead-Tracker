@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 /**
- * Created by piyush on 27/7/17.
+ * Created by nimit on 27/7/17.
  */
 
 data class LeadItem(val name: String,
@@ -15,6 +15,12 @@ data class LeadItem(val name: String,
 
 data class Center(val name: String,
                   val address: String)
+
+data class Comment(val studentName: String,
+                   val studentCollege: String,
+                   val creatersName: String,
+                   val createdAt: String,
+                   val updatedAt: String)
 
 data class Course(val name: String,
                   val details: String,

@@ -18,4 +18,13 @@
     <string name="name">Name</string>
     <string name="start_date">Start Date</string>
     <string name="end_date">End Date</string>
+    <string name="student_name">Name</string>
+    <string name="student_email">Email</string>
+    <string name="student_dob">Date Of Birth</string>
+    <string name="student_college">College</string>
+    <string name="student_year">Year</string>
+    <string name="students_college">College</string>
+    <string name="created_at">Created At</string>
+    <string name="updated_at">Updated At</string>
+    <string name="created_by">Created By</string>
 </resources>

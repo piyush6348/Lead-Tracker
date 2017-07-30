@@ -1,0 +1,76 @@
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+    android:padding="@dimen/dimen_15dp"
+    android:layout_height="100dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:hint="Piyush Gupta"
+                android:id="@+id/student_name"
+                android:layout_weight="1"
+                android:textSize="@dimen/dimen_16dp"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:hint="@string/students_college"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:id="@+id/student_college"
+                android:textSize="@dimen/dimen_16dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:hint="@string/updated_at"
+                android:id="@+id/lead_comment_updated_at"
+                android:layout_weight="1"
+                android:textSize="@dimen/dimen_16dp"
+                android:layout_height="match_parent" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:hint="@string/created_at"
+                android:id="@+id/lead_comment_created_at"
+                android:layout_weight="1"
+                android:textSize="@dimen/dimen_16dp"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:hint="@string/created_by"
+                android:id="@+id/lead_comment_created_by"
+                android:layout_weight="1"
+                android:textSize="@dimen/dimen_16dp"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#000"/>
+</android.support.v7.widget.CardView>

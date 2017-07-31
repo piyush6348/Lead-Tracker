@@ -16,6 +16,7 @@ import android.view.View;
 import com.codingblocks.leadtracker.R;
 import com.codingblocks.leadtracker.fragments.CentreListFragment;
 import com.codingblocks.leadtracker.fragments.CourseListFragment;
+import com.codingblocks.leadtracker.fragments.DashboardFragment;
 import com.codingblocks.leadtracker.fragments.LeadDetailsMain;
 import com.codingblocks.leadtracker.fragments.LeadsFragment;
 
@@ -84,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.leads_fragment:
                 fragmentClass = LeadsFragment.class;
                 break;
-//            case R.id.dashboard_fragment:
+            case R.id.dashboard_fragment:
+                fragmentClass = DashboardFragment.class;
+                break;
 //                fragmentClass = SecondFragment.class;
 //                break;
             case R.id.centers_fragment:

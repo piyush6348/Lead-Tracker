@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.codingblocks.leadtracker.R;
 import com.codingblocks.leadtracker.fragments.CentreListFragment;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_dehaze_white_24dp);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView drawer = (NavigationView) findViewById(R.id.nvView);
+
+        View headerLayout = drawer.inflateHeaderView(R.layout.navigation_header);
 
         ActionBarDrawerToggle drawerToggle = setupDrawerToggle();
         drawerLayout.addDrawerListener(drawerToggle);

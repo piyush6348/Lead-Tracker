@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        //fragmentManager.beginTransaction().replace(R.id.content, new LeadsFragment()).commit();
-        fragmentManager.beginTransaction().replace(R.id.content, new LeadDetailsMain()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content, new LeadsFragment()).commit();
+        //fragmentManager.beginTransaction().replace(R.id.content, new LeadDetailsMain()).commit();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

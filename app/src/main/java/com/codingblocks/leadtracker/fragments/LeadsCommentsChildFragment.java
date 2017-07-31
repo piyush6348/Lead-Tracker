@@ -41,11 +41,12 @@ public class LeadsCommentsChildFragment extends Fragment {
         Comment comment=new Comment("Piyush Gupta","MAIT","Arnav Bhaiya","28/07/2017","28/08/2017");
 
         commentList.add(comment);
+        /*
         commentList.add(comment);
         commentList.add(comment);
         commentList.add(comment);
-        commentList.add(comment);
-        leadsCommentsListAdapter=new LeadsCommentsListAdapter(commentList);
+        commentList.add(comment);*/
+        leadsCommentsListAdapter = new LeadsCommentsListAdapter(commentList);
 
         leadsCommentsList=(RecyclerView) mainView.findViewById(R.id.leads_comments_list);
         leadsCommentsList.setHasFixedSize(true);

@@ -22,8 +22,6 @@ public class LeadDetailsMain extends Fragment {
 
     private ViewPager leadsDetailsViewPager;
     private LeadsDetailsAdapter leadsDetailsAdapter;
-    private PagerTitleStrip pagerTitleStrip;
-    private Toolbar toolbar;
     private TabLayout tabLayout;
     public LeadDetailsMain() {
         // Required empty public constructor

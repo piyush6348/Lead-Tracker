@@ -1,5 +1,9 @@
 package com.codingblocks.leadtracker.adapters;
 
+import android.app.Activity;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.util.Log;
@@ -11,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.codingblocks.leadtracker.R;
+import com.codingblocks.leadtracker.fragments.LeadDetailsMain;
 import com.codingblocks.leadtracker.model.LeadItem;
 
 /**
@@ -25,11 +30,16 @@ public class LeadsAdapter extends RecyclerView.Adapter<LeadsAdapter.ViewHolder> 
     @Override
     public void onClick(View v) {
        // Log.e("onClick: ", );
-        if(v.getId()==R.id.lead_call){
+        int id=v.getId();
+        if(id==R.id.lead_call){
             setUpCall();
         }
-        else if(v.getId()== R.id.lead_email){
+        else if(id== R.id.lead_email){
             setUpEmail();
+        }
+        else if(id== R.id.lead_card){
+            FragmentManager fragmentManager = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.content, new LeadDetailsMain()).commit();
         }
     }
 
@@ -44,13 +54,14 @@ public class LeadsAdapter extends RecyclerView.Adapter<LeadsAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView name,createdAt,updatedAt,message;
         public ImageButton email,call;
-
+        public CardView leadCard;
         public ViewHolder(View itemView) {
             super(itemView);
             this.name = (TextView) itemView.findViewById(R.id.lead_name);
 
             this.createdAt = (TextView) itemView.findViewById(R.id.lead_createdAt);
             this.updatedAt = (TextView) itemView.findViewById(R.id.lead_updatedAt);
+            leadCard=(CardView) itemView.findViewById(R.id.lead_card);
             //this.message = ()itemView.findViewById(R.id.lead_message);
             this.email = (ImageButton)itemView.findViewById(R.id.lead_email);
             this.call = (ImageButton)itemView.findViewById(R.id.lead_call);
@@ -74,6 +85,7 @@ public class LeadsAdapter extends RecyclerView.Adapter<LeadsAdapter.ViewHolder> 
         holder.updatedAt.setText(leadItem.getUpdatedAt());
         holder.call.setOnClickListener(this);
         holder.email.setOnClickListener(this);
+        holder.leadCard.setOnClickListener(this);
     }
 
     @Override

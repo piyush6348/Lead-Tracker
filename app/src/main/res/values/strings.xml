@@ -2,7 +2,7 @@
     <string name="app_name">Lead Tracker</string>
     <string name="form_username">Username</string>
     <string name="form_password">Password</string>
-    <string name="form_login">Login</string>
+    <string name="form_login">Sign In With CB</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -17,6 +17,7 @@
        android:layout_weight="1"
        android:gravity="center"
        android:id="@+id/username"
+       android:visibility="invisible"
        android:hint="@string/form_username"
        android:layout_height="0dp" />
     <EditText
@@ -25,6 +26,7 @@
         android:gravity="center"
         android:id="@+id/password"
         android:hint="@string/form_password"
+        android:visibility="invisible"
         android:layout_height="0dp" />
 
     <Button
